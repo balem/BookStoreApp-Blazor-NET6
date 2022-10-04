@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
@@ -11,10 +11,9 @@
   "profiles": {
     "BookStore.API": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
+      "workingDirectory": "/Users/enrique/Documents/turtorial/CSHAR/BookStoreApp-Blazor-NET6",
       "launchBrowser": true,
-      "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7289;http://localhost:5289",
+      "applicationUrl": "http://localhost:7426",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

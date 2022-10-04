@@ -68,5 +68,6 @@ namespace BookStore.API.Data
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
     }
 }
