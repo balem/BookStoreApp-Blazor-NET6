@@ -1,3 +1,4 @@
+using BookStore.API.Configurations;
 using BookStore.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connString = builder.Configuration.GetConnectionString("BookStroreAppDbConnection");
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseSqlServer(connString));
 
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 
 builder.Services.AddControllers();

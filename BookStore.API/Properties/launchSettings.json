@@ -11,9 +11,8 @@
   "profiles": {
     "BookStore.API": {
       "commandName": "Project",
-      "workingDirectory": "/Users/enrique/Documents/turtorial/CSHAR/BookStoreApp-Blazor-NET6",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:7426",
+      "applicationUrl": "http://localhost:58667",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
