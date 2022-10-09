@@ -40,6 +40,12 @@ namespace BookStore.API.Controllers
                 }
                 var authors = await _context.Authors.ToListAsync();
 
+                if (!authors.Any())
+                {
+                    _logger.LogWarning($"Record not found {nameof(GetAuthors)}");
+                    return NoContent();
+                }
+
 
                 return Ok(_mapper.Map<IEnumerable<Author>, IEnumerable<AuthorReadOnlyDto>>(authors));
             }
