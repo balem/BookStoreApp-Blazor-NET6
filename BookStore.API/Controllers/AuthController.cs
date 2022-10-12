@@ -30,6 +30,7 @@ namespace BookStore.API.Controllers
             try
             {
                 var user = _mapper.Map<ApiUser>(userDto);
+                user.UserName = userDto.Email;
                 var result = await _userManager.CreateAsync(user, userDto.Password);
 
                 if (!result.Succeeded)
@@ -51,6 +52,30 @@ namespace BookStore.API.Controllers
             }
             
         }
-        
-    }
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login(LoginUserDto loginUserDto)
+        {
+            _logger.LogInformation($"Login Attempt for {loginUserDto.Email}");
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(loginUserDto.Email);
+                var passswordValid = await _userManager.CheckPasswordAsync(user, loginUserDto.Password);
+                if (!passswordValid)
+                {
+                    return NotFound();
+                }
+
+                return Accepted();
+                
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        }
 }
