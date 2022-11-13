@@ -27,7 +27,7 @@ namespace BookStore.API.Data
 
             modelBuilder.Entity<Author>(entity =>
             {
-                entity.Property(e => e.Bio).HasMaxLength(10);
+                entity.Property(e => e.Bio).HasMaxLength(255);
 
                 entity.Property(e => e.FirstName).HasMaxLength(50);
 
